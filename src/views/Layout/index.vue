@@ -2,20 +2,15 @@
 import LayoutNav from './components/LayoutNav.vue'
 import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFooter from './components/LayoutFooter.vue'
+import LayoutFixed from './components/LayoutFixed.vue'
 </script>
 
 <template>
-  <div class="main">
-    <LayoutNav />
-    <LayoutHeader />
-    <RouterView />
-    <LayoutFooter />
-  </div>
+  <LayoutFixed />
+  <LayoutNav />
+  <LayoutHeader />
+  <RouterView />
+  <LayoutFooter />
 </template>
 
-<style scoped lang="scss">
-.main {
-  display: flex;
-  flex-direction: column; /* 设置主轴方向为垂直，即上下排列 */
-}
-</style>
+<style scoped lang="scss"></style>

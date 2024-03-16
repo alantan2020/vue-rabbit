@@ -1,10 +1,6 @@
 <script setup>
-import LayoutHeaderUl from './LayoutHeaderUl.vue'
-// vueUse
 import { useScroll } from '@vueuse/core'
 const { y } = useScroll(window)
-
-
 </script>
 
 <template>
@@ -12,8 +8,39 @@ const { y } = useScroll(window)
     <div class="container">
       <RouterLink class="logo" to="/" />
       <!-- 导航区域 -->
+      <ul class="app-header-nav">
+        <li class="home">
+          <RouterLink to="/">首页</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">居家</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">美食</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">服饰</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">母婴</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">个护</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">严选</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">数码</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">运动</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/">杂项</RouterLink>
+        </li>
+      </ul>
 
-      <LayoutHeaderUl />
       <div class="right">
         <RouterLink to="/">品牌</RouterLink>
         <RouterLink to="/">专题</RouterLink>
@@ -22,8 +49,7 @@ const { y } = useScroll(window)
   </div>
 </template>
 
-
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .app-header-sticky {
   width: 100%;
   height: 80px;
@@ -53,7 +79,7 @@ const { y } = useScroll(window)
   .logo {
     width: 200px;
     height: 80px;
-    background: url("@/assets/images/logo.png") no-repeat right 2px;
+    background: url('@/assets/images/logo.png') no-repeat right 2px;
     background-size: 160px auto;
   }
 
@@ -73,6 +99,37 @@ const { y } = useScroll(window)
       &:hover {
         color: $xtxColor;
       }
+    }
+  }
+}
+
+.app-header-nav {
+  width: 820px;
+  display: flex;
+  padding-left: 40px;
+  position: relative;
+  z-index: 998;
+
+  li {
+    margin-right: 40px;
+    width: 38px;
+    text-align: center;
+
+    a {
+      font-size: 16px;
+      line-height: 32px;
+      height: 32px;
+      display: inline-block;
+
+      &:hover {
+        color: $xtxColor;
+        border-bottom: 1px solid $xtxColor;
+      }
+    }
+
+    .active {
+      color: $xtxColor;
+      border-bottom: 1px solid $xtxColor;
     }
   }
 }
