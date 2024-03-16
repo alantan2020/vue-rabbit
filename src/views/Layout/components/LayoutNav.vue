@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+import { getCategoryAPI } from '@/apis/layout'
+import { onMounted, ref } from 'vue'
+
+const categoryList = ref([])
+const getCategory = async () => {
+  const res = await getCategoryAPI()
+  categoryList.value = res.result
+}
+
+onMounted(() => getCategory())
+</script>
 
 <template>
   <nav class="app-topnav">
